@@ -1,0 +1,160 @@
+.header-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .header-icon {
+    position: absolute;
+    color: white;
+    top: 30px;
+    left: 60px;
+    height: 2.5rem;
+  }
+
+  .header-background {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    clip-path: polygon(0 0, 0 100vh, 200vh 80vh, 200vh 0);
+  }
+
+  h1 {
+    color: white;
+    font-size: 60px;
+    line-height: 102px;
+    margin: 0;
+    letter-spacing: 35px;
+    position: relative;
+  }
+
+  .header-h1-animation {
+    animation: moveInHigh 1s ease-out;
+  }
+
+  @keyframes moveInHigh {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 20px;
+    line-height: 34px;
+    margin: 0;
+    word-spacing: 20px;
+    letter-spacing: 15px;
+    position: relative;
+  }
+
+  .header-p-animation {
+    animation: moveInLow 1s ease-out;
+  }
+
+  @keyframes moveInLow {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .header-button {
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 120px;
+    border-radius: 50px;
+    padding: 20px 40px;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .header-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .header-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .header-button-color {
+    background-color: white;
+    color: #7c7c7c;
+  }
+
+  .header-button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  .header-button-color:after {
+    background-color: white;
+  }
+
+  .header-button:hover:after {
+    transform: scaleX(1.4) scaley(1.6);
+    opacity: 0;
+  }
+
+  .header-button-animation {
+    animation: moveInBottom 1s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+.header-container::before {
+  content: "";
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+  clip-path: polygon(0 0, 0 100vh, 200vh 80vh, 200vh 0);
+}
